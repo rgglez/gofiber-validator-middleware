@@ -18,16 +18,37 @@
 go get github.com/rgglez/gofiber-validator-middleware
 ```
 
-```go
-import gofibervalidator "github.com/rgglez/gofiber-validator-middleware/gofibervalidator"
-```
-
 ## Configuration
 
 * ```Next``` defines a function to skip this middleware when returned true.
 * ```Validator``` injected instance, if nil a new validator will be created.
 * ```ContextKey``` is the key used to store the validator in context. Optional. Default: "**validator**"
 * ```CustomValidations``` allows you to register custom validation functions. Optional. Default: nil
+
+## Basic usage
+
+```go
+import (
+    gofibervalidator "github.com/rgglez/gofiber-validator-middleware/gofibervalidator"
+)
+
+// Custom validation function example
+func isEvenNumber(fl validator.FieldLevel) bool {
+	value := fl.Field().Int()
+	return value%2 == 0
+}
+
+app.Use(gofibervalidator.New(gofibervalidator.Config{
+    ContextKey: "validator",
+    CustomValidations: map[string]validator.Func{
+        "even": isEvenNumber,
+    },
+    Next: func(c *fiber.Ctx) bool {
+        // Skip validation for specific routes
+        return c.Path() == "/health"
+    },
+}))
+```
 
 ## Example
 
