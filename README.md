@@ -4,7 +4,6 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/rgglez/gofiber-validator-middleware/total)
 ![GitHub issues](https://img.shields.io/github/issues/rgglez/gofiber-validator-middleware)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/rgglez/gofiber-validator-middleware)
-[![Go Report Card](https://goreportcard.com/badge/github.com/rgglez/gofiber-validator-middleware)](https://goreportcard.com/report/github.com/rgglez/gofiber-validator-middleware)
 [![GitHub release](https://img.shields.io/github/release/rgglez/gofiber-validator-middleware.svg)](https://github.com/rgglez/gofiber-validator-middleware/releases/)
 ![GitHub stars](https://img.shields.io/github/stars/rgglez/gofiber-validator-middleware?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/rgglez/gofiber-validator-middleware?style=social)
